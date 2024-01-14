@@ -27,14 +27,6 @@
 	aria-multiline="true"
 	on:keydown={handleKeyDown}
 ></div>
-<button
-	type="button"
-	on:click={() => {
-		save(content);
-	}}
->
-	Save
-</button>
 
 <style>
 	div {
