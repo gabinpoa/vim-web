@@ -1,22 +1,11 @@
 <script lang="ts">
 	import { contentStore } from '$lib/stores';
+
 	let content: string;
 
 	contentStore.subscribe((value) => {
 		content = value;
 	});
-
-	function handleKeyDown(event: KeyboardEvent) {
-		if (event.key === 'h') {
-			console.log('left');
-		} else if (event.key === 'l') {
-			console.log('right');
-		} else if (event.key === 'j') {
-			console.log('down');
-		} else if (event.key === 'k') {
-			console.log('up');
-		}
-	}
 </script>
 
 <div
@@ -25,8 +14,10 @@
 	contenteditable
 	role="textbox"
 	aria-multiline="true"
-	on:keydown={handleKeyDown}
 ></div>
+<pre class="block">
+  <code class="block" contenteditable bind:innerText={content}/>
+</pre>
 
 <style>
 	div {
